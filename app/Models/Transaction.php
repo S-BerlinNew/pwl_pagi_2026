@@ -11,8 +11,8 @@ class transaction extends Model
     protected $guarded = ['id'];
     public $timestamps = true; 
 
-    public function transactionDetails() {
-        return $this->hasMany(TransactionDetail::class, 'transaction_id', 'id');
+    public function transaction_details() {
+        return $this->hasMany(Transaction_Detail::class, 'transaction_id', 'id');
     }
 
     public function supplier() {

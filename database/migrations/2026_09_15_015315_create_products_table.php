@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('supplier_id')->nullable()->constrained('suppliers')->onDelete('cascade');
             $table->string('barcode_number');
             $table->string('product_name');
             $table->integer('buy_price');
